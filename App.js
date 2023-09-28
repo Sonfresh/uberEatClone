@@ -1,10 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, ViewComponent } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      
+      {/* Restaurant item */}
+      <View style={styles.restaurantContainer}>
+        <Image 
+          source={{ 
+            uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant1.jpeg'
+          }}
+          style={styles.image}
+        />
+      </View>
+  
       <StatusBar style="auto" />
     </View>
   );
@@ -16,5 +26,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  restaurantContainer: {
+    width: '100%',
+  },
+  image: {
+    width: 300,
+    height: 300,
   },
 });
