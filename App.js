@@ -8,8 +8,6 @@ export default function App() {
     <View style={styles.container}>
       
       {/* Restaurant item */}
-      {/* <RestaurantItem restaurant={restaurantsData[0]} />
-      <RestaurantItem restaurant={restaurantsData[1]} /> */}
 
       <FlatList
         data={restaurantsData}
