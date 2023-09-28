@@ -1,19 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, ViewComponent } from 'react-native';
+import { StyleSheet, View, FlatList } from 'react-native';
+import RestaurantItem from './src/components/RestaurantItem';
+import restaurantsData from './assets/data/restaurants.json';
 
 export default function App() {
   return (
     <View style={styles.container}>
       
       {/* Restaurant item */}
-      <View style={styles.restaurantContainer}>
-        <Image 
-          source={{ 
-            uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant1.jpeg'
-          }}
-          style={styles.image}
-        />
-      </View>
+      {/* <RestaurantItem restaurant={restaurantsData[0]} />
+      <RestaurantItem restaurant={restaurantsData[1]} /> */}
+
+      <FlatList
+        data={restaurantsData}
+        renderItem={({ item }) => <RestaurantItem restaurant={item} />}
+        showsVerticalScrollIndicator={false}
+      />
   
       <StatusBar style="auto" />
     </View>
@@ -26,12 +28,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  restaurantContainer: {
-    width: '100%',
-  },
-  image: {
-    width: 300,
-    height: 300,
+    padding: 10,
   },
 });
